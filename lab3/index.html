@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Lab 3</title>
+</head>
+<body>
+    <div class="page">
+        <div class="inputs-block">
+            <div class="input-block">
+                <label for="a-input">Введите коэффициент a</label>
+                <input class="input" type="number" id="a-input" min="-1000" max="1000" value="0">
+            </div>
+            <div class="input-block">
+                <label for="b-input">Введите коэффициент b</label>
+                <input class="input" type="number" id="b-input" min="-1000" max="1000" value="0">
+            </div>
+        </div>
+        <div class="result-block">
+            <button class="button solve-button" id="solve">Посчитать</button>
+            <button class="button clear-button" id="clear">Очистить</button>
+            <h4 id="result"></h4>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
