@@ -1,0 +1,9 @@
+resttemplate:
+  connection:
+    timeout: 2000
+  read:
+    timeout: 10000
+
+users:
+  api:
+    host: https://gorest.co.in
