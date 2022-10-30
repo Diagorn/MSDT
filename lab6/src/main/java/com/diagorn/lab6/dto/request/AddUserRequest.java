@@ -1,9 +1,26 @@
 package com.diagorn.lab6.dto.request;
 
+/**
+ * A request for adding a user
+ *
+ * @author Diagorn
+ */
 public class AddUserRequest {
+    /**
+     * User's name
+     */
     private String name;
+    /**
+     * User's email
+     */
     private String email;
+    /**
+     * User's gender
+     */
     private String gender;
+    /**
+     * User's status
+     */
     private String status;
 
     public String getName() {

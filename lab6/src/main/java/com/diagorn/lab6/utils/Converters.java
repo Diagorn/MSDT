@@ -9,6 +9,11 @@ import com.diagorn.lab6.dto.request.AddUserRequest;
 import com.diagorn.lab6.dto.response.AddUserResponse;
 import org.springframework.stereotype.Component;
 
+/**
+ * Converters from one type to another
+ *
+ * @author Diagorn
+ */
 @Component
 public class Converters {
 

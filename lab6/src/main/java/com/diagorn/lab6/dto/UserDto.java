@@ -6,10 +6,25 @@ package com.diagorn.lab6.dto;
  * @author Diagorn
  */
 public class UserDto {
+    /**
+     * User id
+     */
     private int id;
+    /**
+     * User name
+     */
     private String name;
+    /**
+     * User email
+     */
     private String email;
+    /**
+     * User gender
+     */
     private String gender;
+    /**
+     * User status
+     */
     private String status;
 
     public int getId() {

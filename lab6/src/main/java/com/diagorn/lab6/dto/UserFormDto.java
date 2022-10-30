@@ -1,9 +1,26 @@
 package com.diagorn.lab6.dto;
 
+/**
+ * DTO to handle the user add/edit form
+ *
+ * @author Diagorn
+ */
 public class UserFormDto {
+    /**
+     * User name
+     */
     private String name;
+    /**
+     * User email
+     */
     private String email;
+    /**
+     * User gender
+     */
     private String gender;
+    /**
+     * User status
+     */
     private String status;
 
     public String getName() {
