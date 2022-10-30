@@ -1,6 +1,7 @@
 package com.diagorn.lab6.rest;
 
 import com.diagorn.lab6.dto.UserDto;
+import com.diagorn.lab6.dto.UserFormDto;
 import com.diagorn.lab6.dto.request.AddUserRequest;
 import com.diagorn.lab6.dto.response.AddUserResponse;
 import com.diagorn.lab6.service.UserService;
@@ -38,14 +39,14 @@ public class UsersController {
 
     @GetMapping("/{id}/edit")
     @ResponseBody
-    public UserDto getUserForEditForm(@PathVariable int id) {
-        return userService.getById(id);
+    public UserFormDto getUserForEditForm(@PathVariable int id) {
+        return userService.getUserForEdit(id);
     }
 
     @PutMapping("/{id}")
     @ResponseBody
-    public UserDto editUser(@RequestBody UserDto userDto, @PathVariable int id) {
-        return userService.editUser(userDto);
+    public UserFormDto editUser(@RequestBody UserFormDto userDto, @PathVariable int id) {
+        return userService.editUser(userDto, id);
     }
 
     @DeleteMapping("/{id}")

@@ -4,6 +4,7 @@ import com.diagorn.lab6.domain.GenderEnum;
 import com.diagorn.lab6.domain.StatusEnum;
 import com.diagorn.lab6.domain.User;
 import com.diagorn.lab6.dto.UserDto;
+import com.diagorn.lab6.dto.UserFormDto;
 import com.diagorn.lab6.dto.request.AddUserRequest;
 import com.diagorn.lab6.dto.response.AddUserResponse;
 import org.springframework.stereotype.Component;
@@ -35,6 +36,17 @@ public class Converters {
         return userDto;
     }
 
+    public User convert(UserFormDto userFormDto) {
+        User user = new User();
+
+        user.setName(userFormDto.getName());
+        user.setEmail(userFormDto.getEmail());
+        user.setStatus(StatusEnum.ofString(userFormDto.getStatus()));
+        user.setGender(GenderEnum.ofString(userFormDto.getGender()));
+
+        return user;
+    }
+
     public User convert(AddUserRequest request) {
         User user = new User();
 
@@ -52,5 +64,16 @@ public class Converters {
         response.setId(user.getId());
 
         return response;
+    }
+
+    public UserFormDto convertToUserFormDto(User user) {
+        UserFormDto ufd = new UserFormDto();
+
+        ufd.setEmail(user.getEmail());
+        ufd.setName(user.getName());
+        ufd.setStatus(StringUtils.capitalizeFirstLetter(user.getStatus().getName()));
+        ufd.setGender(StringUtils.capitalizeFirstLetter(user.getGender().getName()));
+
+        return ufd;
     }
 }

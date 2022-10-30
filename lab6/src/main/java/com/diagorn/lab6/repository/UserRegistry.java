@@ -19,6 +19,11 @@ public class UserRegistry {
         this.users.add(user);
     }
 
+    public void add(User user, int id) {
+        user.setId(id);
+        add(user);
+    }
+
     public void add(Collection<User> users) {
         this.users.addAll(users);
     }

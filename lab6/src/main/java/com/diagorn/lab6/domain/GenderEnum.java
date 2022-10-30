@@ -32,7 +32,7 @@ public enum GenderEnum {
      */
     public static GenderEnum ofString(String value) {
         for (GenderEnum gender: GenderEnum.values()) {
-            if (gender.name.equals(value)) {
+            if (gender.name.equalsIgnoreCase(value)) {
                 return gender;
             }
         }

@@ -32,7 +32,7 @@ public enum StatusEnum {
      */
     public static StatusEnum ofString(String value) {
         for (StatusEnum status: StatusEnum.values()) {
-            if (status.name.equals(value)) {
+            if (status.name.equalsIgnoreCase(value)) {
                 return status;
             }
         }

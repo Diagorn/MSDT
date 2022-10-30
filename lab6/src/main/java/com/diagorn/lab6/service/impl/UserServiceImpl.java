@@ -2,6 +2,7 @@ package com.diagorn.lab6.service.impl;
 
 import com.diagorn.lab6.domain.User;
 import com.diagorn.lab6.dto.UserDto;
+import com.diagorn.lab6.dto.UserFormDto;
 import com.diagorn.lab6.dto.request.AddUserRequest;
 import com.diagorn.lab6.dto.response.AddUserResponse;
 import com.diagorn.lab6.repository.UserRegistry;
@@ -50,6 +51,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserFormDto getUserForEdit(int id) {
+        User user = userRegistry.getById(id);
+
+        if (user == null) {
+            return new UserFormDto();
+        }
+
+        return converters.convertToUserFormDto(user);
+    }
+
+    @Override
     public AddUserResponse addNewUser(AddUserRequest request) {
         User user = converters.convert(request);
         user.setId(userRegistry.generateNewId());
@@ -60,10 +72,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto editUser(UserDto userDto) {
+    public UserFormDto editUser(UserFormDto userDto, int id) {
         User user = converters.convert(userDto);
-        userRegistry.deleteById(userDto.getId());
-        userRegistry.add(user);
+        userRegistry.deleteById(id);
+        userRegistry.add(user, id);
         return userDto;
     }
 

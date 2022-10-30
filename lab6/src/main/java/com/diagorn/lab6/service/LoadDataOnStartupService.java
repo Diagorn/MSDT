@@ -50,9 +50,10 @@ public class LoadDataOnStartupService {
 
     private List<User> transformDto(UserDto[] queryResults) {
         List<User> users = new ArrayList<>();
+        Converters convertersUtils = new Converters();
 
         for (UserDto userDto: queryResults) {
-            User user = Converters.convert(userDto);
+            User user = convertersUtils.convert(userDto);
             users.add(user);
         }
 

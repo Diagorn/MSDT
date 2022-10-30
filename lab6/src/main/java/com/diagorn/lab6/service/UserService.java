@@ -1,6 +1,7 @@
 package com.diagorn.lab6.service;
 
 import com.diagorn.lab6.dto.UserDto;
+import com.diagorn.lab6.dto.UserFormDto;
 import com.diagorn.lab6.dto.request.AddUserRequest;
 import com.diagorn.lab6.dto.response.AddUserResponse;
 
@@ -11,9 +12,11 @@ public interface UserService {
 
     UserDto getById(int id);
 
+    UserFormDto getUserForEdit(int id);
+
     AddUserResponse addNewUser(AddUserRequest request);
 
-    UserDto editUser(UserDto userDto);
+    UserFormDto editUser(UserFormDto userDto, int id);
 
     UserDto deleteById(int id);
 }
